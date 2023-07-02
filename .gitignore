@@ -1,0 +1,27 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+.idea/$PRODUCT_WORKSPACE_FILE$
+.idea/.gitignore
+.idea/.name
+.idea/artifacts/
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/sonarlint/
+.idea/vcs.xml
+.idea/
+
+gradle-example/target/
+gradle-example/build/
+
+gradle-example/.gradle/
