@@ -1,6 +1,6 @@
-FROM docker.artifactory/ubuntu:latest
+FROM demo.jfrogchina.com/slash-docker-virtual/ubuntu:latest
 
-MAINTAINER Jainish Shah jainishs@jfrog.com
+LABEL MAINTAINER="slash"
 
 RUN /bin/bash -c cd ~; cd /home ; mkdir -p exec
 ADD jdk/jdk-8*-x64.tar.gz /home/exec
