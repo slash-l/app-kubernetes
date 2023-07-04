@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
-def ARTDOCKER_REGISTRY = "demo.jfrogchina.com/slash-docker-framework"
-def FRAMEWORK_REPO = "slash-docker-framework"
+def ARTDOCKER_REGISTRY = "demo.jfrogchina.com/slash-docker-virtual"
+def FRAMEWORK_REPO = "slash-docker-virtual"
 
 node {
 
