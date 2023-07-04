@@ -1,6 +1,6 @@
 FROM demo.jfrogchina.com/slash-docker-virtual/ubuntu:latest
 
-LABEL MAINTAINER="slash"
+LABEL MAINTAINER="Slash"
 
 RUN /bin/bash -c cd ~; cd /home ; mkdir -p exec
 ADD jdk/jdk-8*-x64.tar.gz /home/exec

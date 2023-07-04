@@ -57,7 +57,8 @@ node {
                 println "Docker Framework Build"
                 docker.build(tagName)
                 println "Docker pushing -->" + tagName + " To " + FRAMEWORK_REPO
-                buildInfo = rtDocker.push(tagName, FRAMEWORK_REPO, buildInfo)
+                // buildInfo = rtDocker.push(tagName, FRAMEWORK_REPO, buildInfo)
+                buildInfo = rtDocker.push ARTDOCKER_REGISTRY + 'docker-framework:' + env.BUILD_NUMBER, FRAMEWORK_REPO
                 println "Docker Buildinfo"
                 rtServer.publishBuildInfo buildInfo
         }
@@ -67,18 +68,18 @@ node {
     // stage('Test') {
     //     dir('docker-framework/framework-test') {
 
-    //         def gradleWarDownload = """{
+    //         def appJarDownload = """{
     //         "files": [
     //             {
-    //               "pattern": "slash-maven-dev-local/org/jfrog/example/gradle/webservice/1.1.2/*.war",
-    //               "target": "war/webservice.war",
+    //               "pattern": "slash-maven-dev-local/com/example/app-simple-maven/1.1.1/app-simple-maven-1.1.1.jar",
+    //               "target": "app/app-simple-maven-1.1.1.jar",
     //               "props": "unit-test=pass",
     //               "flat": "true"
     //             }
     //           ]
     //         }"""
 
-    //         rtServer.download(gradleWarDownload)
+    //         rtServer.download(appJarDownload)
     //         updateDockerFile()
     //         def tagDockerFramework = "${ARTDOCKER_REGISTRY}/docker-framework-test:${env.BUILD_NUMBER}"
     //         docker.build(tagDockerFramework)
