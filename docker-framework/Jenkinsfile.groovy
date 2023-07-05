@@ -11,7 +11,7 @@ node {
     def tagName
     buildInfo.env.capture = true
 
-    stage()){
+    stage("Check out"){
         //Clone example project from GitHub repository
         git url: 'https://github.com/slash-l/app-kubernetes.git', branch : 'main'
     }
