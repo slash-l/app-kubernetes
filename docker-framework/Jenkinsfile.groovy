@@ -5,13 +5,16 @@ def FRAMEWORK_REPO = "slash-docker-virtual"
 
 node {
 
-    //Clone example project from GitHub repository
-    git url: 'https://github.com/slash-l/app-kubernetes.git', branch : 'main'
     def rtServer = Artifactory.server SERVER_NAME
     def rtDocker = Artifactory.docker server: rtServer
     def buildInfo = Artifactory.newBuildInfo()
     def tagName
     buildInfo.env.capture = true
+
+    stage()){
+        //Clone example project from GitHub repository
+        git url: 'https://github.com/slash-l/app-kubernetes.git', branch : 'main'
+    }
 
     //Fetch all depensencies from Artifactory
     stage('Dependencies JDK Tomcat') {
