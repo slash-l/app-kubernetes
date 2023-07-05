@@ -57,8 +57,7 @@ node {
                 println "Docker Framework Build"
                 docker.build(tagName)
                 println "Docker pushing -->" + tagName + " To " + FRAMEWORK_REPO
-                // buildInfo = rtDocker.push(tagName, FRAMEWORK_REPO, buildInfo)
-                def buildInfo2 = rtDocker.push "demo.jfrogchina.com/docker-framework:${env.BUILD_NUMBER}", FRAMEWORK_REPO
+                buildInfo = rtDocker.push(tagName, FRAMEWORK_REPO, buildInfo)
 
                 println "Docker Buildinfo"
                 rtServer.publishBuildInfo buildInfo2
